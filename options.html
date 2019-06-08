@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>EyeRelax.ru - тренировка для глаз</title>
+		<meta name="description" content="Дай глазам отдохнуть!" />
+		<link rel="stylesheet" href="css/styles.css">
+		<style>
+			body{
+				margin-top: 20px;
+			}
+			.modal__content{
+				text-align: center;
+			}
+			.donateForm{
+				display: table;
+				margin: 25px auto 0;
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<div class="modal__content">
+				<p>Если вам понравился тренажёр, вы можете поблагодарить автора, отправив ему любую желаемую сумму.</p>
+
+				<div class="donate">
+					<input class="visually-hidden modal__input" type="radio" name="donate" value="На пиво" id="beer">
+					<label for="beer" aria-label="На пиво">
+						<img width="32" height="32" src="images/beer.svg" alt="">
+						На пиво
+					</label>
+					<input class="visually-hidden modal__input" type="radio" name="donate" value="На кофе" id="coffee">
+					<label for="coffee" aria-label="На кофе">
+						<img width="32" height="32" src="images/coffee.svg" alt="">
+						На кофе
+					</label>
+				</div>
+
+				<form class="donateForm" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+					<input type="hidden" name="receiver" value="410014062225052">
+					<input type="hidden" name="quickpay-form" value="donate">
+					<span class="donateForm__note">Назначение перевода</span>
+					<input class="donateForm__purpose" type="text" readonly name="targets" value="На что-нибудь другое">
+					<input type="hidden" name="need-fio" value="false">
+					<input type="hidden" name="need-email" value="false">
+					<input type="hidden" name="need-phone" value="false">
+					<input type="hidden" name="need-address" value="false">
+					<div class="donateForm__wrapper">
+						<div class="donateForm__wrap">
+							<input class="donateForm__summ" type="number" name="sum" value="100" data-type="number">
+							<img width="14" src="images/ruble.svg" alt="">
+						</div>
+						<input checked class="visually-hidden" type="radio" name="paymentType" value="AC" id="ac">
+						<label class="donateForm__type donateForm__type--first" for="ac" aria-label="Банковская карта">
+							<img width="40" height="20" src="images/credit-card.svg" alt="">
+						</label>
+						<input class="visually-hidden" type="radio" name="paymentType" value="PC" id="pc">
+						<label class="donateForm__type donateForm__type--last" for="pc" aria-label="Яндекс.Деньги">
+							<img width="40" height="20" src="images/yandex-money.svg" alt="">
+						</label>
+					</div>
+					<input class="donateForm__submit" type="submit" value="Перевести">
+				</form>
+			</div>
+		</article>
+		<script src="options.js"></script>
+	</body>
+</html>
