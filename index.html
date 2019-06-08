@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>EyeRelax.ru - тренировка для глаз</title>
+	<meta name="description" content="Дай глазам отдохнуть!" />
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<header class="mainHeader">
+		<button id="play" class="button button--play" aria-label="Старт">
+			<img class="button__play" width="32" height="32" src="images/play.svg" alt="">
+			<img class="button__pause" width="32" height="32" src="images/pause.svg" alt="">
+		</button>
+		
+		<button id="reset" class="button button--reset" aria-label="Сброс">
+			<img width="32" height="32" src="images/reset.svg" alt="">
+		</button>
+		
+		<span class="time" id="time">0:00</span>
+		
+		<button id="faq" class="button button--faq" aria-label="Инструкция">
+			<img width="32" height="32" src="images/faq.svg" alt="">
+		</button>
+		<button id="donate" class="button button--donate" aria-label="Задонатить автору">
+			<img width="32" height="32" src="images/donate.svg" alt="">
+		</button>
+	</header>
+	
+	<main class="main">
+		<div class="eye eye--left" id="eye-left">L</div>
+		<div class="eye eye--right" id="eye-right">R</div>
+	</main>
+
+	<footer class="mainFooter">
+		<section class="mainFooter__block">
+			<h3 class="mainFooter__heading">Скорость</h3>
+			<input type="range" id="speed" value="6" min="1" max="26" name="speed" class="range range--speed">
+		</section>
+		<section class="mainFooter__block">
+			<h3 class="mainFooter__heading">Дистанция</h3>
+			<input type="range" id="distance" value="25" min="10" max="155" name="distance" class="range range--distance">
+		</section>
+	</footer>
+
+	<article id="info" class="modal modal--info">
+		<button id="closeInfo" class="button button--close" aria-label="Закрыть инструкцию">
+			<img width="32" height="32" src="images/close.svg" alt="">
+		</button>
+		<div class="modal__content">
+			<h1>Инструкция по расслаблению глаз</h1>
+			<p>Для тренировки нужно отдалить экран на расстояние 30 сантиметров, включить движение кружков и смотреть левым глазом на левый кружок, а правым - на правый.</p>
+
+			<h2>Как смотреть левым глазом на левый круг, а правым - на правый?</h2>
+			<ul>
+				<li>Поднесите экран поближе к лицу, чтобы кружки были напротив ваших глаз.</li>
+				<li>Поиграйте с фокусом зрения. Для этого смотрите «сквозь» экран (принцип работы такой же, как и при просмотре стереокартинок).</li>
+				<li>Оба кружка должны размыться, а по центру, между ними, появиться чёткий третий кружок.</li>
+				<li>Медленно отдаляйте экран, сохраняя кружки объединенными.</li>
+				<li>Повторите несколько раз, чтобы научиться легко объединять круги.</li>
+			</ul>
+
+			<p>Время тренировки - 1-3 минуты. Если у вас не получается удерживать кружки вместе всё это время, уменьшите скорость.</p>
+			<blockquote>
+				Частая ошибка: левый глаз смотрит на правый кружок, а правый - на левый. Чтобы проверить не допускаете ли вы такую ошибку, после объединения кружков, закройте левый глаз. Открытый правый глаз должен смотреть на правый кружок. <b>Иначе эффект от тренировки будет обратный.</b>
+			</blockquote>
+		</div>
+	</article>
+
+	<article id="money" class="modal modal--donate">
+		<button id="closeDonate" class="button button--close" aria-label="Закрыть инструкцию">
+			<img width="32" height="32" src="images/close.svg" alt="">
+		</button>
+
+		<div class="modal__content">
+			<p>Если вам понравился тренажёр, вы можете поблагодарить автора, отправив ему любую желаемую сумму.</p>
+
+			<div class="donate">
+				<input class="visually-hidden modal__input" type="radio" name="donate" value="На пиво" id="beer">
+				<label for="beer" aria-label="На пиво">
+					<img width="32" height="32" src="images/beer.svg" alt="">
+					На пиво
+				</label>
+				<input class="visually-hidden modal__input" type="radio" name="donate" value="На кофе" id="coffee">
+				<label for="coffee" aria-label="На кофе">
+					<img width="32" height="32" src="images/coffee.svg" alt="">
+					На кофе
+				</label>
+			</div>
+
+			<form class="donateForm" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+				<input type="hidden" name="receiver" value="410014062225052">
+				<input type="hidden" name="quickpay-form" value="donate">
+				<span class="donateForm__note">Назначение перевода</span>
+				<input class="donateForm__purpose" type="text" readonly name="targets" value="На что-нибудь другое">
+				<input type="hidden" name="need-fio" value="false">
+				<input type="hidden" name="need-email" value="false">
+				<input type="hidden" name="need-phone" value="false">
+				<input type="hidden" name="need-address" value="false">
+				<div class="donateForm__wrapper">
+					<div class="donateForm__wrap">
+						<input class="donateForm__summ" type="number" name="sum" value="100" data-type="number">
+						<img width="14" src="images/ruble.svg" alt="">
+					</div>
+					<input checked class="visually-hidden" type="radio" name="paymentType" value="AC" id="ac">
+					<label class="donateForm__type donateForm__type--first" for="ac" aria-label="Банковская карта">
+						<img width="40" height="20" src="images/credit-card.svg" alt="">
+					</label>
+					<input class="visually-hidden" type="radio" name="paymentType" value="PC" id="pc">
+					<label class="donateForm__type donateForm__type--last" for="pc" aria-label="Яндекс.Деньги">
+						<img width="40" height="20" src="images/yandex-money.svg" alt="">
+					</label>
+				</div>
+				<input class="donateForm__submit" type="submit" value="Перевести">
+			</form>
+		</div>
+	</article>
+	
+	<script src="js/scripts.js"></script>
+<!-- 	<script>
+			if ("serviceWorker" in navigator) {
+			  if (navigator.serviceWorker.controller) {
+				console.log("[PWA Builder] active service worker found, no need to register");
+			  } else {
+				// Register the service worker
+				navigator.serviceWorker
+				  .register("pwabuilder-sw.js", {
+					scope: "./"
+				  })
+				  .then(function (reg) {
+					console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+				  });
+			  }
+			}
+		</script> -->
+</body>
+</html>

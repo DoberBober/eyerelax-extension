@@ -1,0 +1,364 @@
+html{
+	box-sizing: border-box;
+}
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+
+body{
+	margin: 0;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: #b4cedb;
+	font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.mainHeader, .main, .mainFooter{
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: none;
+	overflow: hidden;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+}
+
+.button{
+	border: none;
+	background: none;
+	transition: .25s;
+	margin-right: 10px;
+}
+.button:hover, .button:focus{
+	outline: none;
+	filter: brightness(1.5);
+}
+.button img{
+	display: block;
+}
+.button--faq{
+	margin-left: auto;
+}
+.button--donate{
+	margin-right: 0;
+}
+.button--close{
+	position: fixed;
+	margin-right: 0;
+	right: 10px;
+	top: 20px;
+}
+
+.button__play{
+	display: block;
+}
+img.button__pause{
+	display: none;
+}
+.working .button__play{
+	display: none;
+}
+.working .button__pause{
+	display: block;
+}
+
+.mainHeader{
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+}
+.main{
+	flex-grow: 1;
+	position: relative;
+}
+.mainFooter{
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.mainFooter__heading{
+	margin: 0 0 5px;
+	font-weight: normal;
+}
+
+.eye{
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	border-radius: 100%;
+	background-color: pink;
+	transition: .2s;
+}
+.eye--left{
+	transform: translateX(-50px);
+	left: 50%;
+	margin-left: -25px;
+}
+.eye--right{
+	transform: translateX(50px);
+	right: 50%;
+	margin-right: -25px;
+}
+
+
+input[type=range] {
+	-webkit-appearance: none;
+	width: 100%;
+	margin: 7px 0;
+}
+input[type=range]:focus {
+	outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 7px;
+	cursor: pointer;
+	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	border-radius: 0px;
+	border: none;
+}
+input[type=range]::-webkit-slider-thumb {
+	border: 2px solid #ffe584;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background: #b4cedb;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -7px;
+}
+input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 7px;
+	cursor: pointer;
+	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	border-radius: 0px;
+	border: none;
+}
+/*  */
+input[type=range]::-moz-range-thumb {
+	border: 2px solid #ffe584;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background: #b4cedb;
+	cursor: pointer;
+}
+input[type=range]::-ms-track {
+	width: 100%;
+	height: 7px;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+	background: #26ad54;
+	border: none;
+	border-radius: 0px;
+}
+input[type=range]::-ms-fill-upper {
+	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	border: none;
+	border-radius: 0px;
+}
+/*  */
+input[type=range]::-ms-thumb {
+	border: 2px solid #ffe584;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	background: #b4cedb;
+	cursor: pointer;
+	height: 7px;
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100vw;
+	height: 100vh;
+	padding: 20px 60px 20px 20px;
+	background-color: #9FBEFE;
+}
+.modal--visible{
+	display: block;
+}
+.modal__content{
+	background: #fff;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.modal--info h1{
+	margin-top: 0;
+	font-size: 25px;
+	line-height: 1;
+}
+.modal__content h2{
+	font-size: 20px;
+	line-height: 1;
+}
+.modal--info blockquote{
+	position: relative;
+	margin-left: 0;
+	padding-left: 50px;
+}
+.modal--info blockquote::before{
+	position: absolute;
+	content: url('../img/warning.svg');
+	left: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+}
+
+.donate{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.donate label{
+	margin: 0 10px;
+	display: flex;
+	align-items: center;
+}
+.donate img{
+	margin-right: 5px;
+}
+.modal--donate p{
+	margin-top: 0;
+}
+.donate img, .donateForm__type img{
+	filter: grayscale(100%);
+	transition: .25s;
+}
+.donate input:checked + label img,
+.donateForm__wrapper input:checked + label img{
+	filter: grayscale(0%);
+}
+.donateForm__wrapper input:checked + label{
+	background-color: #ffeca6;
+}
+.donateForm__wrapper label{
+	transition: .25s;
+}
+
+.donateForm{
+	margin-top: 25px;
+	padding: 20px;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 3px 4px -3px rgba(0,0,0,.3);
+}
+.donateForm__submit{
+	display: block;
+	border: none;
+	padding: 0 15px;
+	font-size: 15px;
+	line-height: 32px;
+	border-radius: 3px;
+	background-color: #ffdb4d;
+	transition: background-color .1s ease-out 0s;
+}
+.donateForm__submit:hover,
+.donateForm__submit:focus{
+	background-color: #fc0;
+}
+
+.donateForm__note{
+	font-size: 13px;
+	margin-bottom: 5px;
+	color: #999;
+}
+.donateForm__purpose{
+	display: block;
+	border: none;
+	font-size: 18px;
+}
+.donateForm__wrapper{
+	display: flex;
+}
+.donateForm__wrap{
+	position: relative;
+	margin-right: 10px;
+}
+.donateForm__wrap img{
+	position: absolute;
+	right: 3px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.donateForm__summ{
+	width: 100px;
+	height: 100%;
+	padding: 0 5px;
+	border: 1px solid rgba(0,0,0,.25);
+}
+.donateForm__type{
+	padding: 3px;
+	display: flex;
+	border: 1px solid rgba(0,0,0,.25);
+}
+.donateForm__type--first{
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.donateForm__type--last{
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-left: none;
+}
+
+.donateForm__submit, .donateForm__wrapper{
+	margin-top: 20px;
+}
+
+@media (orientation: portrait) and (max-width: 479px){
+	.mainHeader, .main, .mainFooter, .modal--visible{
+		display: none;
+	}
+	body{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 10px;
+		text-align: center;
+	}
+	body::before{
+		content: url('../img/rotate.svg');
+		width: 100px;
+		height: 100px;
+		margin-bottom: 20px;
+		transform: rotate(45deg);
+		animation: rotate 2s infinite linear;
+	}
+	body::after{
+		content: 'Пожалуйста, переведите устройство в альбомную ориентацию';
+	}
+	@keyframes rotate{
+		0%, 100%{
+			transform: rotate(45deg);
+		}
+		50%{
+			transform: rotate(-45deg);
+		}
+	}
+}
