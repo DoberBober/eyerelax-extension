@@ -2,7 +2,7 @@
 	"name": "EyeRelax.ru",
 	"version": "1.0",
 	"description": "Дай глазам отдохнуть!",
-	"permissions": ["tabs"],
+	"permissions": ["tabs", "notifications", "storage"],
 	"options_page": "options.html",
 	"background": {
 		"scripts": ["background.js"],

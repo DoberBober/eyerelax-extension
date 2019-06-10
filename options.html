@@ -19,11 +19,42 @@
 				margin: 25px auto 0;
 				text-align: left;
 			}
+			.time__item{
+				margin: 10px 0;
+			}
+			.time__item button{
+				margin-left: 5px;
+			}
 		</style>
 	</head>
 	<body>
+
+
 		<article>
 			<div class="modal__content">
+				<h1>Уведомления</h1>
+
+				<form action="https://echo.htmlacademy.ru" class="time" id="time" style="margin: 25px 0;">
+					<input type="checkbox" name="notifications" id="notifications">
+					<label for="notifications">Включить уведомления</label>
+
+					<div class="time__list">
+
+					</div>
+					<button type="button" class="addTime" id="addTime">Добавить ещё</button>
+					<button type="submit" class="save" id="save">Сохранить</button>
+				</form>
+
+				<template id="timeTemplate">
+					<div class="time__item">
+						<input type="time" name="time" required>
+						<button class="delete" type="button">x</button>
+					</div>
+				</template>
+
+
+				<div style="margin-top: 50px;"></div>
+
 				<p>Если вам понравился тренажёр, вы можете поблагодарить автора, отправив ему любую желаемую сумму.</p>
 
 				<div class="donate">
