@@ -23,8 +23,8 @@ chrome.runtime.onInstalled.addListener(function(details){
 	if(details.reason == "install" || details.reason == "update"){
 		chrome.notifications.create("INSTALL", {
 			type: "basic",
-			title: "Расширение установлено",
-			message: "Нажмите на это сообщение, чтобы настроить уведомления",
+			title: chrome.i18n.getMessage("extension_installed_title"),
+			message: chrome.i18n.getMessage("extension_installed_description"),
 			iconUrl: "images/logo128.png",
 		}, () => {
 
@@ -45,8 +45,8 @@ setInterval(() => {
 					if(time.split(":")[0] == tempHours && time.split(":")[1] == tempMinutes){
 						chrome.notifications.create("REMINDER", {
 							type: "basic",
-							title: "Может сделаем тренировку для глаз?",
-							message: "Ты уже работаешь довольно долго",
+							title: chrome.i18n.getMessage("reminder_title"),
+							message: chrome.i18n.getMessage("reminder_description"),
 							iconUrl: "images/logo128.png",
 						}, () => {
 							

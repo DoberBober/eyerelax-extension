@@ -225,7 +225,7 @@ input[type=range]::-ms-thumb {
 }
 .modal--info blockquote::before{
 	position: absolute;
-	content: url('../img/warning.svg');
+	content: url('../images/warning.svg');
 	left: 0;
 	top: 0;
 	width: 40px;
@@ -343,7 +343,7 @@ input[type=range]::-ms-thumb {
 		text-align: center;
 	}
 	body::before{
-		content: url('../img/rotate.svg');
+		content: url('../images/rotate.svg');
 		width: 100px;
 		height: 100px;
 		margin-bottom: 20px;

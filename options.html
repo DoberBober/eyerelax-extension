@@ -1,102 +1,100 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>EyeRelax.ru - тренировка для глаз</title>
-		<meta name="description" content="Дай глазам отдохнуть!" />
-		<link rel="stylesheet" href="css/styles.css">
-		<style>
-			body{
-				margin-top: 20px;
-			}
-			.modal__content{
-				text-align: center;
-			}
-			.donateForm{
-				display: table;
-				margin: 25px auto 0;
-				text-align: left;
-			}
-			.time__item{
-				margin: 10px 0;
-			}
-			.time__item button{
-				margin-left: 5px;
-			}
-		</style>
-	</head>
-	<body>
+<html lang="__MSG_page_lang__">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>__MSG_page_title__</title>
+	<meta name="description" content="__MSG_page_description__" />
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		body{
+			margin-top: 20px;
+		}
+		.modal__content{
+			text-align: center;
+		}
+		.donateForm{
+			display: table;
+			margin: 25px auto 0;
+			text-align: left;
+		}
+		.time__item{
+			margin: 10px 0;
+		}
+		.time__item button{
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<div class="modal__content">
+			<h1>__MSG_notifications__</h1>
+
+			<form action="" class="time" id="time" style="margin: 25px 0;">
+				<input type="checkbox" name="notifications" id="notifications">
+				<label for="notifications">__MSG_enable_notifications__</label>
+
+				<div class="time__list">
+
+				</div>
+				<button type="button" class="addTime" id="addTime">__MSG_add_more__</button>
+				<button type="submit" class="save" id="save">__MSG_save__</button>
+			</form>
+
+			<template id="timeTemplate">
+				<div class="time__item">
+					<input type="time" name="time" required>
+					<button aria-label="__MSG_delete__" class="delete" type="button">x</button>
+				</div>
+			</template>
 
 
-		<article>
-			<div class="modal__content">
-				<h1>Уведомления</h1>
+			<div style="margin-top: 50px;"></div>
 
-				<form action="https://echo.htmlacademy.ru" class="time" id="time" style="margin: 25px 0;">
-					<input type="checkbox" name="notifications" id="notifications">
-					<label for="notifications">Включить уведомления</label>
+			<p>__MSG_if_you_like__</p>
 
-					<div class="time__list">
+			<div class="donate">
+				<input class="visually-hidden modal__input" type="radio" name="donate" value="__MSG_beer__" id="beer">
+				<label for="beer" aria-label="__MSG_beer__">
+					<img width="32" height="32" src="images/beer.svg" alt="">
+					__MSG_beer__
+				</label>
+				<input class="visually-hidden modal__input" type="radio" name="donate" value="__MSG_coffee__" id="coffee">
+				<label for="coffee" aria-label="__MSG_coffee__">
+					<img width="32" height="32" src="images/coffee.svg" alt="">
+					__MSG_coffee__
+				</label>
+			</div>
 
+			<form class="donateForm" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+				<input type="hidden" name="receiver" value="410014062225052">
+				<input type="hidden" name="quickpay-form" value="donate">
+				<span class="donateForm__note">__MSG_purpose_of_transfer__</span>
+				<input class="donateForm__purpose" type="text" readonly name="targets" value="__MSG_to_something__">
+				<input type="hidden" name="need-fio" value="false">
+				<input type="hidden" name="need-email" value="false">
+				<input type="hidden" name="need-phone" value="false">
+				<input type="hidden" name="need-address" value="false">
+				<div class="donateForm__wrapper">
+					<div class="donateForm__wrap">
+						<input class="donateForm__summ" type="number" name="sum" value="100" data-type="number">
+						<img width="14" src="images/ruble.svg" alt="">
 					</div>
-					<button type="button" class="addTime" id="addTime">Добавить ещё</button>
-					<button type="submit" class="save" id="save">Сохранить</button>
-				</form>
-
-				<template id="timeTemplate">
-					<div class="time__item">
-						<input type="time" name="time" required>
-						<button class="delete" type="button">x</button>
-					</div>
-				</template>
-
-
-				<div style="margin-top: 50px;"></div>
-
-				<p>Если вам понравился тренажёр, вы можете поблагодарить автора, отправив ему любую желаемую сумму.</p>
-
-				<div class="donate">
-					<input class="visually-hidden modal__input" type="radio" name="donate" value="На пиво" id="beer">
-					<label for="beer" aria-label="На пиво">
-						<img width="32" height="32" src="images/beer.svg" alt="">
-						На пиво
+					<input checked class="visually-hidden" type="radio" name="paymentType" value="AC" id="ac">
+					<label class="donateForm__type donateForm__type--first" for="ac" aria-label="__MSG_bank_card__">
+						<img width="40" height="20" src="images/credit-card.svg" alt="">
 					</label>
-					<input class="visually-hidden modal__input" type="radio" name="donate" value="На кофе" id="coffee">
-					<label for="coffee" aria-label="На кофе">
-						<img width="32" height="32" src="images/coffee.svg" alt="">
-						На кофе
+					<input class="visually-hidden" type="radio" name="paymentType" value="PC" id="pc">
+					<label class="donateForm__type donateForm__type--last" for="pc" aria-label="__MSG_yandex_money__">
+						<img width="40" height="20" src="images/yandex-money.svg" alt="">
 					</label>
 				</div>
-
-				<form class="donateForm" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
-					<input type="hidden" name="receiver" value="410014062225052">
-					<input type="hidden" name="quickpay-form" value="donate">
-					<span class="donateForm__note">Назначение перевода</span>
-					<input class="donateForm__purpose" type="text" readonly name="targets" value="На что-нибудь другое">
-					<input type="hidden" name="need-fio" value="false">
-					<input type="hidden" name="need-email" value="false">
-					<input type="hidden" name="need-phone" value="false">
-					<input type="hidden" name="need-address" value="false">
-					<div class="donateForm__wrapper">
-						<div class="donateForm__wrap">
-							<input class="donateForm__summ" type="number" name="sum" value="100" data-type="number">
-							<img width="14" src="images/ruble.svg" alt="">
-						</div>
-						<input checked class="visually-hidden" type="radio" name="paymentType" value="AC" id="ac">
-						<label class="donateForm__type donateForm__type--first" for="ac" aria-label="Банковская карта">
-							<img width="40" height="20" src="images/credit-card.svg" alt="">
-						</label>
-						<input class="visually-hidden" type="radio" name="paymentType" value="PC" id="pc">
-						<label class="donateForm__type donateForm__type--last" for="pc" aria-label="Яндекс.Деньги">
-							<img width="40" height="20" src="images/yandex-money.svg" alt="">
-						</label>
-					</div>
-					<input class="donateForm__submit" type="submit" value="Перевести">
-				</form>
-			</div>
-		</article>
-		<script src="options.js"></script>
-	</body>
+				<input class="donateForm__submit" type="submit" value="__MSG_give_thanks__">
+			</form>
+		</div>
+	</article>
+	<script src="options.js"></script>
+</body>
 </html>

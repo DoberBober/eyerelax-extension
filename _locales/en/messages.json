@@ -1,0 +1,92 @@
+{
+	"application_description": {
+		"message": "Give your eyes a rest!"
+	},
+	"saved_successfully": {
+		"message": "Saved successfully"
+	},
+	"extension_installed_title": {
+		"message": "Extension installed"
+	},
+	"extension_installed_description": {
+		"message": "Click on this message to set up notifications"
+	},
+	"reminder_title": {
+		"message": "Can we relax our eyes?"
+	},
+	"reminder_description": {
+		"message": "You have been working for a long time"
+	},
+	"page_lang": {
+		"message": "en"
+	},
+	"page_title": {
+		"message": "EyeRelax.ru - training for the eyes"
+	},
+	"page_description": {
+		"message": "Give your eyes a rest!"
+	},
+	"notifications": {
+		"message": "Notifications"
+	},
+	"enable_notifications": {
+		"message": "Enable notifications"
+	},
+	"add_more": {
+		"message": "Add more"
+	},
+	"save": {
+		"message": "Save"
+	},
+	"delete": {
+		"message": "Delete"
+	},
+	"if_you_like": {
+		"message": "If you like this extension, you can thank the author by sending him any desired amount."
+	},
+	"beer": {
+		"message": "For beer"
+	},
+	"coffee": {
+		"message": "For coffee"
+	},
+	"purpose_of_transfer": {
+		"message": "Purpose of transfer"
+	},
+	"to_something": {
+		"message": "Buy yourself something"
+	},
+	"bank_card": {
+		"message": "Bank card"
+	},
+	"yandex_money": {
+		"message": "Yandex.Money"
+	},
+	"give_thanks": {
+		"message": "Give thanks"
+	},
+	"start": {
+		"message": "Start"
+	},
+	"reset": {
+		"message": "Reset"
+	},
+	"instruction": {
+		"message": "Instruction"
+	},
+	"donate": {
+		"message": "Donate"
+	},
+	"speed": {
+		"message": "Speed"
+	},
+	"distance": {
+		"message": "Distance"
+	},
+	"close": {
+		"message": "Close"
+	},
+	"instruction_text": {
+		"message": "<h1>Eye Relaxation Guide</h1><p>For training, you need to remove the screen to a distance of 30 centimeters, turn on the movement of the circles and look at the left eye with the left eye and the right eye with the right eye.</p><h2>How to look at the left circle with the left eye and the right circle with the right one?</h2><ul><li>Bring the screen closer to your face so that the circles are opposite your eyes.</li><li>Play with the focus. To do this, look through the screen (the principle of operation is the same as when viewing stereo images).</li><li>Both circles should be blurred, and in the center, between them, a clear third circle will appear.</li><li>Slowly move the screen away while keeping the circles merged.</li><li>Repeat a few times to learn how to easily join circles.</li></ul><p>Workout time - 1-3 minutes. If you can't keep the circles together all this time, slow down.</p><blockquote>A common mistake: the left eye looks at the right circle, and the right eye looks at the left one. To check if you make such a mistake, after joining the circles, close your left eye. The open right eye should look at the right circle. <b>Otherwise, the effect of training will be the opposite.</b></blockquote>"
+	}
+}
