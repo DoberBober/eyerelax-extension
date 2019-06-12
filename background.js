@@ -32,10 +32,10 @@ chrome.runtime.onInstalled.addListener(function(details){
 	}
 });
 
-setInterval(() => {
+chrome.alarms.onAlarm.addListener(function( alarm ) {
 	chrome.storage.sync.get({
 		notificationsEnabled: true,
-		favoriteTime: []
+		favoriteTime: ["12:50", "15:50", "17:50"]
 	}, function(items) {
 		if(items.notificationsEnabled && items.favoriteTime){
 			var tempDate = new Date();
@@ -43,17 +43,25 @@ setInterval(() => {
 			var tempMinutes = (tempDate.getMinutes() < 10 ? '0' : '') + tempDate.getMinutes();
 
 			items.favoriteTime.forEach((time, index) => {
-					if(time.split(":")[0] == tempHours && time.split(":")[1] == tempMinutes){
-						chrome.notifications.create("REMINDER", {
-							type: "basic",
-							title: chrome.i18n.getMessage("reminder_title"),
-							message: chrome.i18n.getMessage("reminder_description"),
-							iconUrl: "img/logo128.png",
-						}, () => {
-							
-						});
-					}
+				if(time.split(":")[0] == tempHours && time.split(":")[1] == tempMinutes){
+					chrome.notifications.create("REMINDER", {
+						type: "basic",
+						title: chrome.i18n.getMessage("reminder_title"),
+						message: chrome.i18n.getMessage("reminder_description"),
+						iconUrl: "img/logo128.png",
+					}, () => {
+						
+					});
+				}
 			})
 		}
 	});
-}, 60000)
+});
+
+(function () {
+	function createAlarm() {
+		chrome.alarms.create("", {
+			delayInMinutes: 1, periodInMinutes: 1});
+	}
+	createAlarm();
+})();

@@ -3,7 +3,7 @@
 	"version": "1.0",
 	"default_locale": "en",
 	"description": "__MSG_application_description__",
-	"permissions": ["tabs", "notifications", "storage"],
+	"permissions": ["tabs", "notifications", "storage", "alarms"],
 	"options_page": "options.html",
 	"background": {
 		"scripts": ["background.js"],
