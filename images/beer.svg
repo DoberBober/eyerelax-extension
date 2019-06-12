@@ -1,9 +1,5 @@
 <svg viewBox="-20 0 480 480.07592" xmlns="http://www.w3.org/2000/svg">
-	<linearGradient id="beer" gradientUnits="userSpaceOnUse" x1="40" x2="472" y1="256" y2="256">
-		<stop offset="0" stop-color="#80d8ff"/>
-		<stop offset="1" stop-color="#ea80fc"/>
-	</linearGradient>
-	<g fill="url(#beer)">
+	<g fill="#a02967">
 		<path d="m64.117188 168.074219h16v16h-16zm0 0"/>
 		<path d="m80.117188 96.074219h16v16h-16zm0 0"/>
 		<path d="m240.117188 80.074219h16v16h-16zm0 0"/>

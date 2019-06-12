@@ -11,7 +11,7 @@ body{
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	background: #b4cedb;
+	background: #d3cfc4;
 	font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 .mainHeader, .main, .mainFooter{
@@ -102,8 +102,9 @@ img.button__pause{
 	top: 50%;
 	margin-top: -25px;
 	border-radius: 100%;
-	background-color: pink;
+	background-color: #0f2180;
 	transition: .2s;
+	color: #fff;
 }
 .eye--left{
 	transform: translateX(-50px);
@@ -129,16 +130,15 @@ input[type=range]::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 7px;
 	cursor: pointer;
-	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	background: #0f2180;
 	border-radius: 0px;
 	border: none;
 }
 input[type=range]::-webkit-slider-thumb {
-	border: 2px solid #ffe584;
 	height: 20px;
 	width: 20px;
 	border-radius: 100%;
-	background: #b4cedb;
+	background: #a02967;
 	cursor: pointer;
 	-webkit-appearance: none;
 	margin-top: -7px;
@@ -147,17 +147,16 @@ input[type=range]::-moz-range-track {
 	width: 100%;
 	height: 7px;
 	cursor: pointer;
-	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	background: #0f2180;
 	border-radius: 0px;
 	border: none;
 }
 /*  */
 input[type=range]::-moz-range-thumb {
-	border: 2px solid #ffe584;
 	height: 20px;
 	width: 20px;
 	border-radius: 100%;
-	background: #b4cedb;
+	background: #a02967;
 	cursor: pointer;
 }
 input[type=range]::-ms-track {
@@ -174,17 +173,16 @@ input[type=range]::-ms-fill-lower {
 	border-radius: 0px;
 }
 input[type=range]::-ms-fill-upper {
-	background: linear-gradient(90deg, rgba(42,245,152,1) 0%, rgba(234,128,252,1) 100%);
+	background: #0f2180;
 	border: none;
 	border-radius: 0px;
 }
 /*  */
 input[type=range]::-ms-thumb {
-	border: 2px solid #ffe584;
 	height: 20px;
 	width: 20px;
 	border-radius: 100%;
-	background: #b4cedb;
+	background: #a02967;
 	cursor: pointer;
 	height: 7px;
 }
@@ -198,7 +196,7 @@ input[type=range]::-ms-thumb {
 	width: 100vw;
 	height: 100vh;
 	padding: 20px 60px 20px 20px;
-	background-color: #9FBEFE;
+	background-color: #d3cfc4;
 }
 .modal--visible{
 	display: block;
@@ -225,7 +223,7 @@ input[type=range]::-ms-thumb {
 }
 .modal--info blockquote::before{
 	position: absolute;
-	content: url('../images/warning.svg');
+	content: url('../img/warning.svg');
 	left: 0;
 	top: 0;
 	width: 40px;
@@ -247,6 +245,7 @@ input[type=range]::-ms-thumb {
 }
 .modal--donate p{
 	margin-top: 0;
+	text-align: center;
 }
 .donate img, .donateForm__type img{
 	filter: grayscale(100%);
@@ -264,7 +263,8 @@ input[type=range]::-ms-thumb {
 }
 
 .donateForm{
-	margin-top: 25px;
+	display: table;
+	margin: 25px auto 0;
 	padding: 20px;
 	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 3px 4px -3px rgba(0,0,0,.3);
 }
@@ -343,7 +343,7 @@ input[type=range]::-ms-thumb {
 		text-align: center;
 	}
 	body::before{
-		content: url('../images/rotate.svg');
+		content: url('../img/rotate.svg');
 		width: 100px;
 		height: 100px;
 		margin-bottom: 20px;
