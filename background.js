@@ -38,10 +38,11 @@ setInterval(() => {
 		favoriteTime: []
 	}, function(items) {
 		if(items.notificationsEnabled && items.favoriteTime){
+			var tempDate = new Date();
+			var tempHours = tempDate.getHours();
+			var tempMinutes = (tempDate.getMinutes() < 10 ? '0' : '') + tempDate.getMinutes();
+
 			items.favoriteTime.forEach((time, index) => {
-				var tempDate = new Date();
-				var tempHours = tempDate.getHours();
-				var tempMinutes = (tempDate.getMinutes() < 10 ? '0' : '') + tempDate.getMinutes();
 					if(time.split(":")[0] == tempHours && time.split(":")[1] == tempMinutes){
 						chrome.notifications.create("REMINDER", {
 							type: "basic",
