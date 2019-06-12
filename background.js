@@ -25,7 +25,7 @@ chrome.runtime.onInstalled.addListener(function(details){
 			type: "basic",
 			title: chrome.i18n.getMessage("extension_installed_title"),
 			message: chrome.i18n.getMessage("extension_installed_description"),
-			iconUrl: "images/logo128.png",
+			iconUrl: "img/logo128.png",
 		}, () => {
 
 		});
@@ -47,7 +47,7 @@ setInterval(() => {
 							type: "basic",
 							title: chrome.i18n.getMessage("reminder_title"),
 							message: chrome.i18n.getMessage("reminder_description"),
-							iconUrl: "images/logo128.png",
+							iconUrl: "img/logo128.png",
 						}, () => {
 							
 						});

@@ -75,7 +75,7 @@ function save_options() {
 			type: "basic",
 			title: chrome.i18n.getMessage("saved_successfully"),
 			message: "",
-			iconUrl: "images/logo128.png",
+			iconUrl: "img/logo128.png",
 		}, () => {
 			
 		});
